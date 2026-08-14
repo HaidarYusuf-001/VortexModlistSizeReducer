@@ -14,7 +14,12 @@ public class VortexDetectionService : IVortexDetectionService
         string vortexPath = Path.Combine(appData, "Vortex");
 
         string[] potentialPaths = {
-            Path.Combine(vortexPath, "temp", "state_backups_full", "hourly.json")
+            Path.Combine(vortexPath, "live_state.json"),
+            Path.Combine(vortexPath, "state.json"),
+            Path.Combine(vortexPath, "state.v2.json"),
+            Path.Combine(vortexPath, "temp", "state_backups_full", "hourly.json"),
+            Path.Combine(vortexPath, "temp", "state_backups_full", "daily.json"),
+            Path.Combine(vortexPath, "temp", "state_backups_full", "weekly.json")
         };
 
         foreach (var path in potentialPaths)

@@ -57,6 +57,11 @@ public class ReducerService : IReducerService
                 var files = Directory.EnumerateFiles(dir, "*.*", SearchOption.AllDirectories);
                 foreach (var file in files)
                 {
+                    if (_configExtensions.Contains(Path.GetExtension(file)))
+                    {
+                        continue;
+                    }
+
                     if (_hardlinkService.GetLinkCount(file) > 1)
                     {
                         isActive = true;
@@ -104,12 +109,11 @@ public class ReducerService : IReducerService
 
         if (canDetectDisabled)
         {
-            Console.WriteLine($"- 100% Overwritten Mods Detected (Will be processed): {overwrittenMods.Count}");
-            Console.WriteLine($"- Truly Disabled Mods Detected: {disabledMods.Count}");
+            Console.WriteLine($"- Disabled Mods Detected: {disabledMods.Count}");
         }
         else
         {
-            Console.WriteLine($"- Disabled / 100% Overwritten Mods Detected: {disabledMods.Count}");
+            Console.WriteLine($"- Disabled / Fully Overwritten Mods Detected: {disabledMods.Count}");
         }
 
         bool processDisabled = false;
