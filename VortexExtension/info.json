@@ -1,0 +1,7 @@
+{
+    "id": "live-state-dumper",
+    "name": "Live State Dumper",
+    "author": "TheTyphon001",
+    "version": "1.0.0",
+    "description": "Dumps live Redux state to JSON."
+}
