@@ -36,7 +36,6 @@ class Program
             .ConfigureServices((context, services) =>
             {
                 services.AddSingleton<IHardlinkService, HardlinkService>();
-                services.AddSingleton<IAnalyzerService, AnalyzerService>();
                 services.AddSingleton<IReducerService, ReducerService>();
                 services.AddSingleton<IVortexDetectionService, VortexDetectionService>();
             })
