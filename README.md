@@ -15,6 +15,7 @@ This tool scans your Vortex staging folder and deletes mod files that get overwr
 * **Smart Safety Exclusions:** Strictly ignores all configuration files (`.ini`, `.json`, `.xml`), plugin data (`.esp`, `.esm`), UI elements (`.swf`), and `.dll` files. It only deletes heavy assets, making it 100% safe for your script mods and engine stability.
 
 > **IMPORTANT WARNING**
+>
 > After using this tool, you can definitely still add new mods later. However, **do not change the load order of your already deployed mods after running this.** Because the overwritten files get physically deleted from your Staging Folder, changing the load order of existing mods later will result in missing files. Keep your downloaded mod archives (`.zip`/`.rar`) as a backup.
 
 ## Requirements
